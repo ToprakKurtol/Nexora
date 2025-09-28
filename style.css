@@ -1,54 +1,96 @@
 ```css
-/* Genel ayarlar */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  background: #0f2027;
   color: #fff;
+  overflow: hidden;
+}
+
+/* Genel ekran yapısı */
+.screen {
+  position: absolute;
+  top: 0; left: 100%;
+  width: 100%; height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  text-align: center;
-  padding: 20px;
+  align-items: center;
+  transition: left 0.8s ease;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
+.screen.active {
+  left: 0;
 }
 
-p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin-bottom: 40px;
-  color: #dcdcdc;
+/* Logo */
+.logo {
+  width: 200px;
+  margin-bottom: 30px;
 }
 
-/* İndirme Butonu */
-.download-btn {
-  display: inline-block;
+/* İleri Butonu */
+.next-btn {
   padding: 15px 40px;
-  font-size: 1.1rem;
-  color: #fff;
-  background: linear-gradient(90deg, #ff512f, #dd2476);
+  font-size: 1.2rem;
   border: none;
   border-radius: 50px;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.next-btn:hover {
+  transform: scale(1.05);
+}
+
+/* İndirme alanı */
+.download-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 50px;
+  font-size: 1.2rem;
+  color: #fff;
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  border-radius: 50px;
   text-decoration: none;
-  transition: 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
 }
 
 .download-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(221, 36, 118, 0.7);
+}
+
+/* Çıkış tarihi */
+.release-box {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.release-box p {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #ff9f43;
+}
+
+#release-date {
+  display: block;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Footer */
@@ -56,7 +98,7 @@ footer {
   position: absolute;
   bottom: 20px;
   font-size: 0.9rem;
-  color: #aaa;
+  color: #bbb;
 }
 ```
 
